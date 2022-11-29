@@ -1,0 +1,23 @@
+{
+  "name": "acuity-auto-manager",
+  "version": "1.0.0",
+  "description": "An robust application to automatically remove duplicated bookings, late appointments and all that's not suppose to be persisted there.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node route"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anic4cio/acuity-auto-manager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anic4cio/acuity-auto-manager/issues"
+  },
+  "homepage": "https://github.com/anic4cio/acuity-auto-manager#readme",
+  "dependencies": {
+    "axios": "^1.2.0"
+  }
+}
