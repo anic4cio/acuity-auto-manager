@@ -23,7 +23,7 @@ const getDatePlus = (date: Date, days: number): Date => {
   return result
 }
 
-const getWeddingsBefore90Days = async (params: AcuityParams): Promise<Array<object>> => {
+const getWeddingsBefore90Days = async (params: AcuityParams): Promise<object[]> => {
   const options = {
     method: 'GET',
     url: process.env.API_KEY,
@@ -35,7 +35,7 @@ const getWeddingsBefore90Days = async (params: AcuityParams): Promise<Array<obje
   }
 
   try {
-    const response: Promise<Array<object>> = await axios.request(options)
+    const response: Promise<object[]> = await axios.request(options)
       .then(res => res)
       .catch(err => console.error(err))
     return response
