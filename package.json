@@ -4,7 +4,9 @@
   "description": "An robust application to automatically remove duplicated bookings, late appointments and all that's not suppose to be persisted there.",
   "main": "index.js",
   "scripts": {
-    "start": "node -r dotenv/config ./index"
+    "start": "node -r dotenv/config ./index",
+    "lint": "eslint . --ext .ts",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -20,12 +22,11 @@
   "dependencies": {
     "axios": "^1.2.0",
     "dotenv": "^16.0.3",
+    "eslint": "^8.28.0",
     "typescript": "^4.9.3"
   },
   "devDependencies": {
     "@types/node": "^18.11.10",
-    "@typescript-eslint/eslint-plugin": "^5.45.0",
-    "@typescript-eslint/parser": "^5.45.0",
-    "eslint": "^8.28.0"
+    "@typescript-eslint/eslint-plugin": "^5.45.0"
   }
 }
