@@ -1,4 +1,5 @@
-(async () => { 
+// GET call to Acuity API using Fetch inside a IIFE (Immediately Involked Function Expression)
+(async () => {
 
   const options = {
     method: 'POST',
