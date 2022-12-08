@@ -48,7 +48,7 @@ const route: HttpFunction = async (req, res) => {
     return res.status(reqValidation.code).json(reqValidation)
   const lateWeddings = await getLateWeddingsToCancel()
 
-  if (req.method === 'PUT') {
+  if (req.method) {
     const weddingsToReport = []
     for (const lateWedd of lateWeddings) {
       const id = lateWedd.id
@@ -57,7 +57,7 @@ const route: HttpFunction = async (req, res) => {
     }
     const responseReportMsg = prepareReports(weddingsToReport)
     await sendReportToSlack(responseReportMsg, weddingsToReport)
-  } else if (req.method === 'GET') {
+  } else if (req.method != '') {
     const responseReportMsg = prepareReports(lateWeddings)
     await sendReportToSlack(responseReportMsg, lateWeddings)
   }
@@ -117,6 +117,7 @@ const getWeddingsUntil90Days = async (calendarId: number) => {
     },
   }
   const response = await axios.get<IAcuityAppointment[]>(
+    // eslint-disable-next-line max-len
     `https://acuityscheduling.com/api/v1/appointments?minDate=${minDate}&maxDate=${maxDate}&calendarID=${calendarId}&canceled=false&excludeForms=true&direction=DESC`,
     options
   )
